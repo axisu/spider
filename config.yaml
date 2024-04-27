@@ -1,0 +1,11 @@
+#并发数
+concurrency: 4
+#等待*秒后没有新任务，工作协程关闭，0时会立刻关闭不再等待
+duration: 15
+url: "https://wechat-applets.bjyddj.com/api/scheme"
+method: "post"
+headers:
+  Accept: "application/json"
+  User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImV4cCI6MTcxNDUyNzQ3NSwiaWF0IjoxNzEzOTIyNjc1fQ==.kPM0UCwKCo7XYJa7fKLjxuF6+g2unvvWiFucDznOY7E="
+  u-id: "{{}}"
