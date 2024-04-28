@@ -5,7 +5,7 @@ duration: 10
 url: "https://api.juuline.com/api/banner"
 method: "post"
 headers:
-  Accept: "application/json"
+  Content-Type: "application/json"
   User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
   token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImV4cCI6MTcxNDUyNzQ3NSwiaWF0IjoxNzEzOTIyNjc1fQ==.kPM0UCwKCo7XYJa7fKLjxuF6+g2unvvWiFucDznOY7E="
   u-id: "{{}}"
