@@ -11,15 +11,14 @@ func main() {
 	conf := parseConfig()
 	pool := NewPool(conf.Concurrency, conf.Duration)
 	for i := 0; i < 10; i++ {
-		task := NewTask()
-		task.Data = i
+		task := NewTask(i, conf)
 		pool.Submit(task)
 	}
 	pool.Wait()
 }
 
 // parseConfig 解析配置文件
-func parseConfig() *Config {
+func parseConfig() Config {
 	var configFile string
 	flag.StringVar(&configFile, "c", "", "yaml文件地址，默认config.yaml")
 	flag.Parse()
@@ -38,5 +37,5 @@ func parseConfig() *Config {
 	if conf.Concurrency <= 0 {
 		conf.Concurrency = 10
 	}
-	return &conf
+	return conf
 }

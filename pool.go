@@ -2,7 +2,6 @@ package main
 
 import (
 	"container/list"
-	"fmt"
 	"sync"
 	"time"
 )
@@ -30,11 +29,11 @@ func NewWorker(ID int, wg *sync.WaitGroup) *Worker {
 func (w *Worker) Run() {
 	go func() {
 		defer func() {
-			fmt.Printf("ID:%d worker 关闭\n", w.ID)
+			//fmt.Printf("ID:%d worker 关闭\n", w.ID)
 			w.wg.Done()
 		}()
 		for task := range w.taskCh {
-			fmt.Printf("ID:%d worker 执行\n", w.ID)
+			//fmt.Printf("ID:%d worker 执行\n", w.ID)
 			task.Exec()
 		}
 	}()
