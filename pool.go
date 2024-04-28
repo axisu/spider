@@ -26,8 +26,8 @@ func NewWorker(ID int, wg *sync.WaitGroup) *Worker {
 	}
 }
 
-// Start 通道中取任务执行
-func (w *Worker) Start() {
+// Run 通道中取任务执行
+func (w *Worker) Run() {
 	go func() {
 		defer func() {
 			fmt.Printf("ID:%d worker 关闭\n", w.ID)
@@ -60,7 +60,7 @@ func NewPool(num int, duration int) *Pool {
 	for i := 0; i < num; i++ {
 		p.wg.Add(1)
 		w := NewWorker(i, &p.wg)
-		w.Start()
+		w.Run()
 		p.workers = append(p.workers, w)
 	}
 	p.distribute()
