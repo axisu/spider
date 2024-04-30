@@ -8,20 +8,6 @@ import (
 	"strings"
 )
 
-type Config struct {
-	Concurrency int               `mapstructure:"concurrency"`
-	Duration    int               `mapstructure:"duration"`
-	URL         string            `mapstructure:"url"`
-	Method      string            `mapstructure:"method"`
-	Headers     map[string]string `mapstructure:"headers"`
-	Response    Response          `mapstructure:"response"`
-}
-
-type Response struct {
-	Code int      `mapstructure:"code"`
-	Data []string `mapstructure:"data"`
-}
-
 type Task struct {
 	id     int
 	config Config
